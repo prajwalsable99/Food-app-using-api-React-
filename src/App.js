@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { Component } from 'react'
+import Navbar from './components/Navbar';
+import Foods from './components/Foods';
+
+
+export default class App extends Component {
+
+     render() {
+          return (
+
+               <BrowserRouter>
+                    <Navbar></Navbar>
+                    <Routes>
+                         
+                         <Route exact path="" element={<Foods  key="Miscellaneous"category="Miscellaneous"></Foods>}> </Route>
+                         <Route exact path="/Seafood" element={<Foods key="Seafood"category="Seafood"></Foods>}> </Route>
+                         <Route exact path="/Breakfast" element={<Foods key=" Breakfast"category="Breakfast"></Foods>}> </Route>
+                         <Route exact path="/Dessert" element={<Foods  key="Dessert"category="Dessert"></Foods>}> </Route>
+                         <Route exact path="/Chicken" element={<Foods key="Chicken" category="Chicken"></Foods>}></Route>
+                         <Route exact path="/Pasta" element={<Foods key="Pasta" category="Pasta"></Foods>}></Route>
+                         <Route exact path="/Vegetarian" element={<Foods key="Vegetarian" category="Vegetarian"></Foods>}></Route>
+                         <Route exact path="/Side" element={<Foods key="Side" category="Side"></Foods>}></Route>
+
+                        
+                    </Routes>
+               </BrowserRouter>
+
+
+
+
+
+          )
+     }
 }
 
-export default App;
