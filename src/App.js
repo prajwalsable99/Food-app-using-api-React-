@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Foods from './components/Foods';
 
 
+
 export default class App extends Component {
 
      render() {
@@ -13,6 +14,7 @@ export default class App extends Component {
 
                <BrowserRouter>
                     <Navbar></Navbar>
+                    
                     <Routes>
                          
                          <Route exact path="" element={<Foods  key="Miscellaneous"category="Miscellaneous"></Foods>}> </Route>
